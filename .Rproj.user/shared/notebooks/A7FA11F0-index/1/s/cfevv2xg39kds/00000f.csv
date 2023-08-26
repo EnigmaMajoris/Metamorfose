@@ -1,0 +1,7 @@
+"0",""
+"0","# Remova as stopwords do objeto tidy_letras$palavra"
+"0","tidy_letras$palavra <- removeWords(tidy_letras$palavra, c(my_stopwords))"
+"0",""
+"0","# Remova as linhas em que a palavra seja vazia após a remoção das stopwords"
+"0","tidy_letras <- subset(tidy_letras, palavra != """")"
+"0",""

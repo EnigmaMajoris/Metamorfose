@@ -1,0 +1,8 @@
+"0",""
+"0","# Criando repósitorio com as letras de música em estrangeiras."
+"0","# Filtro com todas as músicas em inglês considerada na análise."
+"0",""
+"0","letras_gringas <- tidy_letras |>"
+"0","  filter(nome %in% c(""Ain't She Sweet"", ""All I Have To Do Is Dream / Put Your Head On My Shoulder / Dear Someone"", ""Angel"",  ""A Reluctant Messiah"", ""Barefoot Ballad"", ""Blue Moon Of Kentucky"", ""Blue Suede Shoes"", ""Bye Bye Love / Be-Bop-A-Lula / Love Letters In The Sand / Hello Mary Lou"", ""Can't Help Falling In Love"", ""Diana / Little Darlin' / Oh! Carol / Runaway (Medley)"", ""Fear Of The Rain"", ""Fool's Gold"", ""Good Rockin' Tonight"", ""Honey Don't"", ""How Could I Know"", ""How Could I Know (Love Was To Go)"", ""I Am (Gita)"", ""I Don't Really Need You Anymore"", ""I'll Cry Instead"", ""Jambalaya / Shake, Rattle And Roll / Bop-A-Lena (Medley)"", ""Just Because"", ""Kansas City"", ""Let Me Sing, Let Me Sing"", ""Love Is Magick"", ""Love Is Magick (II version)"", ""Lucille / Corrine, Corrina (Pot-Pourri)"", ""Metamorfose Ambulante (Espanhol)"", ""Morning Train"", ""My Baby Left Me / Thirty Days / Rip It Up (Medley)"", ""My Way / Trouble"", ""Only You"", ""Orange Juice (S.O.S)"", ""Ouro de Tolo (versión en español)"", ""Poor Little Fool / Bernadine (Medley)"", ""Ready Teddy / Hard-Headed Woman / Baby, I Don't Care"", ""Rock Around The Clock"", ""Rock Around The Clock / Blue Suede Shoes / Tutti-Frutti / Long Tall Sally (Medley)"", ""Roll Over Beethoven"", ""So Glad You're Mine"", ""Sunseed"", ""The Apple"", ""The Diary"", ""The Great Pretender"", ""Wee Wee Hours"", ""White Wings"" )) |>"
+"0","  arrange(ano)"
+"0","  head (letras_gringas, n=3)"

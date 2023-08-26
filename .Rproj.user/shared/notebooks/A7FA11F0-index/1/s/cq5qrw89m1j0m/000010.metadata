@@ -1,0 +1,1 @@
+{"height":405.43881334981458,"width":656.0,"size_behavior":0,"conditions":[[1,"Warning: Using the `size` aesthetic in this geom was deprecated in ggplot2 3.4.0.\nPlease use `linewidth` in the `default_aes` field and elsewhere instead."]]}

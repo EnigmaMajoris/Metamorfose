@@ -1,0 +1,7 @@
+"0","  "
+"0","# Criando repósitorio com as letras de música em português"
+"0",""
+"0","letras_pt <- tidy_letras |>"
+"0","  filter(!nome %in% letras_gringas$nome) |>"
+"0","  arrange(ano)"
+"0","  head (letras_pt, n=3)"

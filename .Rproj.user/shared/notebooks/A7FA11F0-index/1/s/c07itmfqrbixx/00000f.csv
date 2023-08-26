@@ -1,0 +1,7 @@
+"0",""
+"0","album_raul |>"
+"0","  count(key_mode, sort = TRUE) |>"
+"0","  head(3) |>"
+"0","  datatable("
+"0","    caption = ""Acordes mais utilizados"""
+"0","  )"

@@ -1,0 +1,5 @@
+"0",""
+"0","album_raul <- raul |>"
+"0","  filter(album_name %in% c(""Raulzito E Os Panteras"", ""Sessão das 10"", ""\""Krig-Ha, Bandolo\"""", ""Gita"", ""Novo Aeon"", ""Há 10 Mil Anos Atrás"", ""Raul Rock Seixas"", ""O Dia Em Que A Terra Parou"", ""Mata Virgem"", ""Por Quem os Sinos Dobram"", ""Abre-Te Sésamo"", ""Raul Seixas"", ""Metrô Linha 743"", ""Uah-Bap-Lu-Bap-Lah-Bein-Bum"", ""A Pedra Do Gênesis"", ""A panela do Diabo"")) |>"
+"0","  arrange(album_release_year)"
+"0",""

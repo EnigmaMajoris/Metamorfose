@@ -1,0 +1,23 @@
+"0",""
+"0","letras <- read_csv(""dados/letras.csv"")"
+"2","[1mRows: [22m[34m251[39m [1mColumns: [22m[34m2[39m"
+"2","[36m──[39m [1mColumn specification[22m [36m──────────────────────────────────────────────────────[39m
+[1mDelimiter:[22m "",""
+[31mchr[39m (2): nome, verso"
+"2","
+[36mℹ[39m Use `spec()` to retrieve the full column specification for this data.
+[36mℹ[39m Specify the column types or set `show_col_types = FALSE` to quiet this message."
+"0","glimpse(letras)"
+"1","Rows: 251"
+"1",""
+"1","
+"
+"1","Columns: 2"
+"1",""
+"1","
+"
+"1","$ nome  [3m[38;5;246m<chr>[39m[23m ""À Beira do Pantanal"", ""A Geração da Luz"", ""A Hora do Trem Pas…
+$ verso [3m[38;5;246m<chr>[39m[23m ""Foi lá na beira do PantanalSeu corpo tão belo enterreiFoi lá …"
+"1",""
+"1","
+"

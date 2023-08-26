@@ -1,0 +1,7 @@
+"0",""
+"0","raul_cor <- letras_pt_filtrado %>%"
+"0","  filter(album != ""Composições"","
+"0","         !grepl(""versão"", nome, ignore.case = TRUE)) |>"
+"0","  pairwise_cor(nome, palavra, sort = TRUE)"
+"0",""
+"0","raul_cor"

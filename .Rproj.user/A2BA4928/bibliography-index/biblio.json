@@ -1,0 +1,227 @@
+{
+    "sources": [
+        {
+            "URL": "https://developer.spotify.com/documentation/web-api",
+            "author": [
+                {
+                    "dropping-particle": "for",
+                    "family": "Developers",
+                    "given": "Spotify"
+                }
+            ],
+            "id": "SpotifyAPI",
+            "issued": {
+                "date-parts": [
+                    [
+                        2023
+                    ]
+                ]
+            },
+            "title": "Spotify web API",
+            "type": "book"
+        },
+        {
+            "author": [
+                {
+                    "family": "Fávero",
+                    "given": "Luiz Paulo"
+                },
+                {
+                    "family": "Belfiore",
+                    "given": "Patrícia"
+                }
+            ],
+            "id": "ManualAnaliseDados",
+            "issued": {
+                "date-parts": [
+                    [
+                        2017
+                    ]
+                ]
+            },
+            "publisher": "Elsevier Brasil",
+            "title": "Manual de análise de dados: Estatística e modelagem multivariada com excel®, SPSS® e stata®",
+            "title-short": "Manual de análise de dados",
+            "type": "book"
+        },
+        {
+            "URL": "https://revistacontinente.com.br/secoes/memoria/o-disco-rkavernistar-de-nossa-musica",
+            "author": [
+                {
+                    "family": "Nova",
+                    "given": "Leonardo Vila"
+                }
+            ],
+            "id": "LeonardoNova",
+            "issued": {
+                "date-parts": [
+                    [
+                        2021
+                    ]
+                ]
+            },
+            "title": "O DISCO “KAVERNISTA” DE NOSSA MÚSICA",
+            "type": "webpage"
+        },
+        {
+            "URL": "https://pt.wikipedia.org/wiki/Os_24_Maiores_Sucessos_da_Era_do_Rock",
+            "author": [
+                {
+                    "family": "Wikipedia"
+                }
+            ],
+            "id": "24Sucessos",
+            "issued": {
+                "date-parts": [
+                    [
+                        2023
+                    ]
+                ]
+            },
+            "title": "Os 24 maiores sucessos da era do rock",
+            "type": "webpage"
+        },
+        {
+            "URL": "https://github.com/charlie86/spotifyr",
+            "author": [
+                {
+                    "family": "Thompson",
+                    "given": "Charlie"
+                },
+                {
+                    "family": "Antal",
+                    "given": "Daniel"
+                },
+                {
+                    "family": "Parry",
+                    "given": "Josiah"
+                },
+                {
+                    "family": "Phipps",
+                    "given": "Donal"
+                },
+                {
+                    "family": "Wolff",
+                    "given": "Tom"
+                }
+            ],
+            "id": "R-spotifyr",
+            "issued": {
+                "date-parts": [
+                    [
+                        2022
+                    ]
+                ]
+            },
+            "title": "Spotifyr: R wrapper for the spotify web API",
+            "title-short": "Spotifyr",
+            "type": "book",
+            "version": "2.2.4"
+        },
+        {
+            "author": [
+                {
+                    "family": "Silge",
+                    "given": "Julia"
+                },
+                {
+                    "family": "Robinson",
+                    "given": "David"
+                }
+            ],
+            "id": "silge2017",
+            "issued": {
+                "date-parts": [
+                    [
+                        2017
+                    ]
+                ]
+            },
+            "publisher": "\" O’Reilly Media, Inc.\"",
+            "title": "Text mining with r: A tidy approach",
+            "title-short": "Text mining with r",
+            "type": "book"
+        },
+        {
+            "DOI": "10.1111/j.1467-8640.2012.00460.x",
+            "URL": "https://onlinelibrary.wiley.com/doi/abs/10.1111/j.1467-8640.2012.00460.x",
+            "author": [
+                {
+                    "family": "Mohammad",
+                    "given": "Saif M."
+                },
+                {
+                    "family": "Turney",
+                    "given": "Peter D."
+                }
+            ],
+            "container-title": "Computational Intelligence",
+            "id": "nrc",
+            "issue": "3",
+            "issued": {
+                "date-parts": [
+                    [
+                        2013
+                    ]
+                ]
+            },
+            "page": "436-465",
+            "title": "Crowdsourcing a word-emotion association lexicon",
+            "type": "article-journal",
+            "volume": "29"
+        },
+        {
+            "URL": "http://www2.compute.dtu.dk/pubdb/pubs/6010-full.html",
+            "author": [
+                {
+                    "dropping-particle": "Å.",
+                    "family": "Nielsen",
+                    "given": "F."
+                }
+            ],
+            "id": "Nielsen",
+            "issued": {
+                "date-parts": [
+                    [
+                        2011,
+                        3
+                    ]
+                ]
+            },
+            "keyword": "word list, sentiment analysis, opinion mining, text mining",
+            "publisher": "Informatics; Mathematical Modelling, Technical University of Denmark",
+            "publisher-place": "Richard Petersens Plads, Building 321, DK-2800 Kgs. Lyngby",
+            "title": "AFINN",
+            "type": "book"
+        },
+        {
+            "author": [
+                {
+                    "family": "Zhao",
+                    "given": "Jun"
+                },
+                {
+                    "family": "Liu",
+                    "given": "Kang"
+                },
+                {
+                    "family": "Xu",
+                    "given": "Liheng"
+                }
+            ],
+            "id": "Bing",
+            "issued": {
+                "date-parts": [
+                    [
+                        2016
+                    ]
+                ]
+            },
+            "publisher": "MIT Press One Rogers Street, Cambridge, MA 02142-1209, USA journals-info …",
+            "title": "Sentiment analysis: Mining opinions, sentiments, and emotions",
+            "title-short": "Sentiment analysis",
+            "type": "book"
+        }
+    ],
+    "project_biblios": []
+}

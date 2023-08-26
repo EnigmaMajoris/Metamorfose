@@ -1,0 +1,62 @@
+"0",""
+"0","raul <- read_csv(""dados/raul.csv"")"
+"2","[1mRows: [22m[34m529[39m [1mColumns: [22m[34m39[39m"
+"2","[36m──[39m [1mColumn specification[22m [36m──────────────────────────────────────────────────────[39m
+[1mDelimiter:[22m "",""
+[31mchr[39m (18): artist_name, artist_id, album_id, album_type, album_release_date...
+[32mdbl[39m (16): album_release_year, danceability, energy, key, loudness, mode, s...
+[33mlgl[39m  (5): album_images, artists, available_markets, explicit, is_local"
+"2","
+[36mℹ[39m Use `spec()` to retrieve the full column specification for this data.
+[36mℹ[39m Specify the column types or set `show_col_types = FALSE` to quiet this message."
+"0","glimpse(raul)"
+"1","Rows: 529"
+"1",""
+"1","
+"
+"1","Columns: 39"
+"1",""
+"1","
+"
+"1","$ artist_name                  [3m[38;5;246m<chr>[39m[23m ""Raul Seixas"", ""Raul Seixas"", ""Raul Sei…
+$ artist_id                    [3m[38;5;246m<chr>[39m[23m ""7jrRQZg4FZq6dwpi3baKcu"", ""7jrRQZg4FZq6…
+$ album_id                     [3m[38;5;246m<chr>[39m[23m ""5kNLUcqTc0xXbz6ny1nj2a"", ""5kNLUcqTc0xX…
+$ album_type                   [3m[38;5;246m<chr>[39m[23m ""album"", ""album"", ""album"", ""album"", ""al…
+$ album_images                 [3m[38;5;246m<lgl>[39m[23m NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,…
+$ album_release_date           [3m[38;5;246m<chr>[39m[23m ""2017-06-23"", ""2017-06-23"", ""2017-06-23…
+$ album_release_year           [3m[38;5;246m<dbl>[39m[23m 2017, 2017, 2017, 2017, 2017, 2017, 201…
+$ album_release_date_precision [3m[38;5;246m<chr>[39m[23m ""day"", ""day"", ""day"", ""day"", ""day"", ""day…
+$ danceability                 [3m[38;5;246m<dbl>[39m[23m 0.308, 0.380, 0.520, 0.390, 0.443, 0.46…
+$ energy                       [3m[38;5;246m<dbl>[39m[23m 0.919, 0.813, 0.503, 0.864, 0.679, 0.56…
+$ key                          [3m[38;5;246m<dbl>[39m[23m 11, 8, 0, 0, 5, 9, 2, 10, 7, 0, 0, 2, 7…
+$ loudness                     [3m[38;5;246m<dbl>[39m[23m -13.628, -8.079, -9.324, -12.482, -7.13…
+$ mode                         [3m[38;5;246m<dbl>[39m[23m 1, 1, 1, 1, 0, 0, 1, 0, 1, 1, 1, 1, 1, …
+$ speechiness                  [3m[38;5;246m<dbl>[39m[23m 0.1320, 0.0933, 0.0432, 0.4810, 0.2020,…
+$ acousticness                 [3m[38;5;246m<dbl>[39m[23m 0.0962, 0.7380, 0.1260, 0.6060, 0.8570,…
+$ instrumentalness             [3m[38;5;246m<dbl>[39m[23m 9.84e-04, 4.37e-02, 8.53e-06, 1.64e-06,…
+$ liveness                     [3m[38;5;246m<dbl>[39m[23m 0.9640, 0.3280, 0.4170, 0.5940, 0.8130,…
+$ valence                      [3m[38;5;246m<dbl>[39m[23m 0.397, 0.767, 0.342, 0.430, 0.468, 0.93…
+$ tempo                        [3m[38;5;246m<dbl>[39m[23m 165.168, 91.460, 95.311, 166.610, 96.48…
+$ track_id                     [3m[38;5;246m<chr>[39m[23m ""7KvqWwj5SehrzDNvArKgta"", ""4E2LoCZsTQhe…
+$ analysis_url                 [3m[38;5;246m<chr>[39m[23m ""https://api.spotify.com/v1/audio-analy…
+$ time_signature               [3m[38;5;246m<dbl>[39m[23m 4, 4, 4, 4, 5, 4, 4, 4, 3, 4, 4, 0, 4, …
+$ artists                      [3m[38;5;246m<lgl>[39m[23m NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,…
+$ available_markets            [3m[38;5;246m<lgl>[39m[23m NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,…
+$ disc_number                  [3m[38;5;246m<dbl>[39m[23m 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, …
+$ duration_ms                  [3m[38;5;246m<dbl>[39m[23m 255240, 180893, 185320, 290160, 261786,…
+$ explicit                     [3m[38;5;246m<lgl>[39m[23m FALSE, FALSE, FALSE, FALSE, FALSE, FALS…
+$ track_href                   [3m[38;5;246m<chr>[39m[23m ""https://api.spotify.com/v1/tracks/7Kvq…
+$ is_local                     [3m[38;5;246m<lgl>[39m[23m FALSE, FALSE, FALSE, FALSE, FALSE, FALS…
+$ track_name                   [3m[38;5;246m<chr>[39m[23m ""Rock do Diabo - Ao Vivo"", ""Let Me Sing…
+$ track_preview_url            [3m[38;5;246m<chr>[39m[23m ""https://p.scdn.co/mp3-preview/1fe02c65…
+$ track_number                 [3m[38;5;246m<dbl>[39m[23m 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, …
+$ type                         [3m[38;5;246m<chr>[39m[23m ""track"", ""track"", ""track"", ""track"", ""tr…
+$ track_uri                    [3m[38;5;246m<chr>[39m[23m ""spotify:track:7KvqWwj5SehrzDNvArKgta"",…
+$ external_urls.spotify        [3m[38;5;246m<chr>[39m[23m ""https://open.spotify.com/track/7KvqWwj…
+$ album_name                   [3m[38;5;246m<chr>[39m[23m ""As Melhores do Maluco Beleza, Vol. 2 (…
+$ key_name                     [3m[38;5;246m<chr>[39m[23m ""B"", ""G#"", ""C"", ""C"", ""F"", ""A"", ""D"", ""A#…
+$ mode_name                    [3m[38;5;246m<chr>[39m[23m ""major"", ""major"", ""major"", ""major"", ""mi…
+$ key_mode                     [3m[38;5;246m<chr>[39m[23m ""B major"", ""G# major"", ""C major"", ""C ma…"
+"1",""
+"1","
+"
