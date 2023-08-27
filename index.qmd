@@ -1999,7 +1999,7 @@ Criei um novo *dataframe* `raul_cor` que contém apenas as músicas em portuguê
 
 Utilizando a função `pairwise_cor()` iremos comparar todas as músicas selecionadas através das palavras que elas contém.
 
-Correlações muitas baixas fará com que o mapa fique elegível, por isso optei por correlações maior que 0.13.
+Correlações muitas baixas fará com que o mapa fique ilegível, por isso optei por correlações maior que 0.13.
 
 A escolha do número *13* não foi ao acaso, foi escolhido para representar o sentimento *esquerdista e anarquista* de Raul Seixas.
 :::
