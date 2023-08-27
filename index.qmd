@@ -2001,7 +2001,7 @@ Utilizando a função `pairwise_cor()` iremos comparar todas as músicas selecio
 
 Correlações muitas baixas fará com que o mapa fique ilegível, por isso optei por correlações maior que 0.13.
 
-A escolha do número *13* não foi ao acaso, foi escolhido para representar o sentimento *esquerdista e anarquista* de Raul Seixas.
+A escolha do número *13* não foi ao acaso, foi escolhido para representar o sentimento *esquerdista e anarquista* de Raul Seixas. 
 :::
 
 ```{r}
