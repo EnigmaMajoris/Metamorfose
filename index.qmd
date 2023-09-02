@@ -320,7 +320,7 @@ Foi durante uma participação num disco da banda [Camisa de Vênus](http://www.
 ####### 
 
 ::: {style="text-align: justify;"}
-Desta parceria saiu uma turnê pelo Brasil com 50 shows e um albúm, [A Panela Do Diabo](https://open.spotify.com/intl-pt/album/5lJyJ0p9mdjHoQXfTMwxxk?si=3L-24y3IRrGIqA_p7Htgeg), que foi lançado dois dias antes de Raul ser encontrado sem vida em seu apartamento em São Paulo.
+Desta parceria saiu uma turnê pelo Brasil com 50 shows e um albúm, [A Panela Do Diabo](https://open.spotify.com/intl-pt/album/5lJyJ0p9mdjHoQXfTMwxxk?si=3L-24y3IRrGIqA_p7Htgeg), que foi lançado alguns dias antes de Raul ser encontrado sem vida em seu apartamento em São Paulo.
 
 Raul Santos Seixas, morreu em decorrência de pancreatite aguda, em 21 de agosto de 1989.
 :::
@@ -372,20 +372,18 @@ library(tm)
 library(tidytext)
 library(textdata)
 library(fmsb)
-library(radarchart) #Plotar gráfico teia
-library(plotly)# Plotar gráfico de teia
-library(scales) # Ajustar o gráfico teia
-library(widyr) #to find correlations between songs
-library(ggraph) #plotting network maps
-library(igraph) #plotar network maps
-library(knitr)
+library(radarchart)
+library(scales) 
+library(widyr) 
+library(ggraph) 
+library(igraph) 
 
 ```
 
 ::: {style="text-align: justify;"}
 Mas para que servem esses pacotes?
 
-O pacote `Tidyverse` é considerado o pacote base do R, ao carregarmos ele estamos carregando também outros pacotes como:
+O pacote `tidyverse` é considerado o pacote base do R, ao carregarmos ele estamos carregando também outros pacotes como:
 
 -   `{readr}` importa bases de dados para o R;
 
@@ -397,6 +395,16 @@ O pacote `Tidyverse` é considerado o pacote base do R, ao carregarmos ele estam
 
 O pacote `ggridges` serve de extensão ao pacote `ggplot2` para compararmos a distribuição de uma variável X em vários níveis de uma variável Y. Já o pacote `highcharter` cria gráficos interativos, enquanto que o pacote `DT` cria tabelas interativas, permitindo paginação e pesquisar as informações nelas contidas. As bibliotecas `httr` e `rvest`são usadas principalmente para interagir com APIs da web e realizar operações de web scraping, respectivamente.
 
+Os pacotes `tm`, `tidytext` e `textdata` são usados para realizar a mineração, manipulação e análise de textos.
+
+A biblioteca `stopwords` é usada para remover da análise palavras que são irrelevante na análise de texto, como por exemplo os artigos e pronomes. Enquanto que a biblioteca `wordcloud2` permite criar nuvens de palavras a partir de um conjunto de texto. Uma nuvem de palavras é uma representação visual das palavras mais frequentes em um corpo de texto, onde o tamanho de cada palavra é proporcional à sua frequência no texto.
+
+Faremos uso dos pacotes `fmsb` e `radarchart` para criarmos um gráfico de teia que será utilizado para demonstrar a análise de sentimento das letras de música. 
+
+Com a biblioteca `scales` será possível ajustar as características e esclas dos gráficos e com `widyr` pode-se calcular correlações entre variáveis de texto, permitindo analisar relacionamentos entre várias variáveis de texto.
+
+Para visualizar as correlações entre as músicas faremos uso dos pacotes `igraph`, que cria e permite a manipulação de um gráfico de rede e o pacote `ggraph` que terá o papel de "plotar" esse gráfico.
+
 E por último, mas não menos importante, temos o pacote `spotifyr` que permite obter e realizar alguns entendimentos sobre os dados mantidos pelo [*Spotify*](https://open.spotify.com/), com algumas das funções abordadas ao longo deste trabalho.
 :::
 
@@ -407,7 +415,7 @@ O primeiro passo é obter os *IDs* da sua conta do *Spotify*. Não tem ideia de 
 
 De posse dos *IDs*, é preciso executar o código abaixo para termos acessos aos dados sobre as músicas do nosso [Cowboy Fora da Lei](https://open.spotify.com/intl-pt/track/2kVm4qAAXR7qUfHdiKg0qI?si=4d7ef72861f843c0), usando a função `get_artist_audio_features`.
 
-Como este artigo foi elaborado de forma que possa ser reproduzido para que qualquer pessoa possa reproduzir com exatidão todos os resultados demonstrados, optei por salvar a base de dados para evitar que ocorra várias chamadas às APIs; por esta razão, o código está inibido.
+Como este artigo foi elaborado para que qualquer pessoa possa reproduzir com exatidão todos os resultados demonstrados, optei por salvar a base de dados para evitar que ocorra várias chamadas às APIs; por esta razão, o código está inibido.
 :::
 
 ``` r
@@ -615,7 +623,7 @@ album_raul |>
 ::: {style="text-align: justify;"}
 Tanto o álbum *Gita* quanto o álbum *Novo Aeon* possuem 14 faixas, cada, mas será que por serem os álbuns com mais faixas, eles são os mais longos? Para responder essa pergunta, usaremos a função `duration_ms` do pacote `spotifyr`.
 
-Contudo identifiquei que os álbuns **A Panela do Diabo** e **O Dia Em Que A Terra Parou** estão com a data de lançamento posterior a morte de Raul, 1989. Isso ocorreu porque estes ábuns foram relançados nas datas indicadas na tabels.
+Contudo identifiquei que os álbuns **A Panela do Diabo** e **O Dia Em Que A Terra Parou** estão com a data de lançamento posterior a morte de Raul, 1989. Isso ocorreu porque estes ábuns foram relançados nas datas indicadas na tabela.
 
 Com as funções `mutate()` e `replace()` do pacote `dplyr` vamos ajustar essas datas para as datas do primeiro lançamento,1989 e 1977, respectivamente, conforme declarado na [*Discografia de Raul Seixas*](https://pt.wikipedia.org/wiki/Discografia_de_Raul_Seixas) na *Wikipedia* e, vamos aproveitar e inserir uma nova coluna, `album`, em nosso banco de dados que demonstre o nome do album, juntamente com a respectiva data de seu lançamento:
 :::
@@ -649,7 +657,7 @@ album_raul |>
 ####### 
 
 ::: {style="text-align: justify;"}
-Verifuca-se que a *A Panela do Diabo* é o álbum mais longo da discografia de Raul, seguido do álbum *Gita*.
+Verifica-se que a *A Panela do Diabo* é o álbum mais longo da discografia de Raul, seguido do álbum *Gita*.
 
 Ainda analizando o nosso banco de dados `album_raul`, outra informação que poderemos extrair são os acordes.
 
@@ -803,7 +811,7 @@ Enquanto que *Cantiga de Ninar* do álbum *Há 10 Mil Anos Atrás*, é a menos p
 ####### 
 
 ::: {style="text-align: justify;"}
-O atributo `speechiness` (*fala*) detecta a presença de palavras faladas em uma faixa musical enquanto que o `instrumentalness` (*instrumentalidade*) prevê se uma faixa não contém vocais.
+O atributo `speechiness` (*fala*) detecta a presença de palavras faladas em uma faixa musical enquanto que o `instrumentalness` (*instrumentalidade*) verifica a ausência de vocais.
 
 De acordo com o Spotify @SpotifyAPI, *"Quanto mais exclusivamente falado for o registro (por exemplo, programa de entrevista, audiolivro, poesia), mais próximo de 1.0 será o valor do atributo* ***fala***. *Já na* ***instrumentalidade***, *sons de* **"Ooh"** *e* **"Aah"** *são tratados como instrumentais nesse contexto. Quanto mais próximo o valor de instrumentalidade for de 1.0, maior a probabilidade de a faixa não conter conteúdo vocal. Valores acima de 0.5 pretendem representar faixas instrumentais, mas a confiança é maior à medida que o valor se aproxima de 1.0"*.
 
@@ -1097,7 +1105,7 @@ glimpse(letras)
 ```
 
 ::: {style="text-align: justify;"}
-O objeto que geramos na etapa do **Prelúdio** (3.1), se mostrou inaquado. Para darmos início a nossa análise de texto será preciso ajustá-lo, de modo que cada linha de verso corresponda a uma linha do arquivo e que o arquivo contenha o nome do albúm e o ano de seu lançamento.
+O objeto que geramos na etapa do **Prelúdio** (3.1), se mostrou inadequado. Para darmos início a nossa análise de texto será preciso ajustá-lo, de modo que cada linha de verso corresponda a uma linha do arquivo e que o arquivo contenha o nome do albúm e o ano de seu lançamento.
 :::
 
 ```{r}
@@ -1370,7 +1378,7 @@ tidy_letras |>
 ####### 
 
 ::: {style="text-align: justify;"}
-Chegou a hora de removermos as *stopwords* e linhas em branco:
+Chegou a hora de removermos as *stopwords* e as linhas em branco:
 :::
 
 ```{r}
@@ -1431,7 +1439,7 @@ Mas antes, vamos separar as letras *"gringas"* das letras *"brazuca"*.
 :::
 
 ::: {style="text-align: justify;"}
-Criando os repositório com as letras de músicas estrangeiras `letras_gringas` e em português `letras_pt`, respectivamente e, exibindo as três primeiras entradas de cada objeto:
+Criando os repositórios com as letras de músicas estrangeiras `letras_gringas` e em português `letras_pt`, respectivamente e, exibindo as três primeiras entradas de cada objeto:
 :::
 
 ```{r}
@@ -1513,11 +1521,11 @@ print(p)
 ####### 
 
 ::: {style="text-align: justify;"}
-O gráfico nos mostra que ter muitos dados abaixo da linha da mediana significa que as letras das músicas têm poucas variedades léxicas, ou seja, são mais repetitivas. No caso dos álbuns *A Panela do Diabo - 1989*, *Krig-ha, Bandolo! - 1973* e *Gita - 1974*, são álbuns que possuem músicas mais pop como *Be-Bop-A-Lula*, *Metamorfose Ambulante* e *Gita*. Esses álbuns apresentarem baixa variedade léxica. Isso faz sentido, já que as canções pop são tradicionalmente repetitivas tanto musical quanto liricamente, e é isso que as faz virarem "chiclete".
+O gráfico nos mostra que ter muitos dados abaixo da linha da mediana significa que as letras das músicas têm poucas variedades léxicas, ou seja, são mais repetitivas. No caso dos álbuns *A Panela do Diabo - 1989*, *Krig-ha, Bandolo! - 1973* e *Gita - 1974*, são álbuns que possuem músicas mais pop como *Be-Bop-A-Lula*, *Metamorfose Ambulante* e *Gita*. Esses álbuns apresentarem baixa variedade léxica, faz sentido, já que as canções pop são tradicionalmente repetitivas tanto musical quanto liricamente, e é isso que as tornam "chiclete".
 
-O álbum *Por quem os Sinos Dobram - 1979* nos mostra que muitas músicas possuem uma variedade maior de palavras únicas em relação ao total de palavras. O que também faz todo o sentido, já que esse álbum foi lançado numa época que a popularidade do Raul não estava mais em alta. As músicas deste ábum apresentam um vocabulário mais diversificado e menos repetitivo. Como é o caso das músicas *Diamante de Mendigo* e *Por quem os Sinos Dobram*, que dá nome ao disco.
+O álbum *Por quem os Sinos Dobram - 1979* nos mostra que muitas músicas possuem uma variedade maior de palavras únicas em relação ao total de palavras. O que também faz todo o sentido, já que esse álbum foi lançado numa época que a popularidade do Raul não estava mais em alta. As músicas deste álbum apresentam um vocabulário mais diversificado e menos repetitivo. Como é o caso das músicas *Diamante de Mendigo* e *Por quem os Sinos Dobram*, que dá nome ao disco.
 
-Já o álbum *Uah-Bap-Lu-Bap-Lah-Béin-Bum! - 1987* é o que se mostra mais equilibrado diante da varidade de palavras. E novamente, o gráfico confirma aquilo que já é sabido. O Lançamento deste álbum marca o retorno de Raul Seixas ao sucesso, depois de 03 anos do seu último lançamento (*Metrô Linha 743 - 1984*).
+Já o álbum *Uah-Bap-Lu-Bap-Lah-Béin-Bum! - 1987* é o que se mostra mais equilibrado diante da varidade de palavras. E novamente, o gráfico confirma aquilo que já é sabido. O Lançamento deste álbum marca o retorno de Raul Seixas ao sucesso, depois de três anos do seu último lançamento (*Metrô Linha 743 - 1984*).
 
 O Lançamento de 87, traz músicas pop como *Cowboy Fora da Lei* que, inclusive virou trilha sonora de novela (*Brega & Chique*) e músicas menos repetitivas como *Gente*. O álbum foi muito importante na retomada artística de Raul, lhe rendendo até um Disco de Ouro, o terceiro de sua carreira.
 
@@ -1637,7 +1645,7 @@ Se quiser saber mais detalhes, vale a pena dar uma conferida nesse [material](ht
 
 Como pode ser observado na figura do fluxograma da análise de texto, nós já temos até aqui os dados das nossas letras *tokenizados* e só nos falta selecionar as letras que vamos analisar.
 
-Como os léxicos da função `getsentiments()` funcionam melhor em inglês, para fazer a análise do sentimento, escohi analisar 4 músicas que possuem versão em português e que também são conhecidas do grande público *(talvez pelo título você não as reconheça mas se ouvir, certamente reconhecerá a melodia ou algum trecho da música)*.
+Como os léxicos da função `getsentiments()` funcionam melhor em inglês, para fazer a análise do sentimento, escohi analisar 4 músicas que possuem versão em português e inglês e, que também são conhecidas do grande público *(talvez pelo título você não as reconheça mas se ouvir, certamente reconhecerá a melodia ou algum trecho da música)*.
 
 |      Inglês      |   Português   |
 |:----------------:|:-------------:|
@@ -1701,7 +1709,7 @@ raul_afinn |>
 ::: {style="text-align: justify;"}
 O gráfico nos mostra que as músicas [*The Apple*](https://www.letras.mus.br/raul-seixas/1506748/) */ [A Maçã](https://www.letras.mus.br/raul-seixas/48293/)* e [*Fool's Gold*](https://www.letras.mus.br/raul-seixas/442411/) */ [Ouro de Tolo](https://www.letras.mus.br/raul-seixas/48326/)* são as mais ***positivas***, enquanto que [*Fear Of The Rain*](https://www.letras.mus.br/raul-seixas/1702884/) */ [Medo da Chuva](https://www.letras.mus.br/raul-seixas/48316/)* é a música mais ***negativa*** da nossa seleção.
 
-Com auxíio de um gráfico feito com o léxico `bing` vamos ver mais no detalhe as características dessas músicas.
+Com auxílio de um gráfico feito com o léxico `bing` vamos ver mais no detalhe as características dessas músicas.
 
 No gráfico, cada medida numérica representa uma palavra, já que o léxico `bing` usa as categorias "positivo" e "negativo" em vez da escala de pontuação.
 :::
@@ -1892,7 +1900,7 @@ background-color: #f3efe6'>
 ####### 
 
 ::: {style="text-align: justify;"}
-A música [*Fear Of The Rain*](https://www.letras.mus.br/raul-seixas/1702884/) */ [Medo da Chuva](https://www.letras.mus.br/raul-seixas/48316/)* tanto na análise `afinn` como `bing` foi classificada como ***negativa***. Na análise `nrc` percebemos que os sentimentos que prevalecem são ***tristeza***, ***raiva***, ***medo***, ***confiança***. Sentimentos que corroboram as análises feitas e o contexto da letra.
+A música [*Fear Of The Rain*](https://www.letras.mus.br/raul-seixas/1702884/) */ [Medo da Chuva](https://www.letras.mus.br/raul-seixas/48316/)* tanto na análise `afinn` como `bing` foi classificada como ***negativa***. Na análise `nrc` percebemos que os sentimentos que prevalecem são ***tristeza***, ***raiva***, ***medo***, ***confiança***. Sentimentos que corroboram as análises feitas e com o contexto da letra.
 
 A música fala sobre o medo em quebrar os acordo sociais, neste caso representado pelo casamento. E, ao perder o medo da chuva, Raul afirma que está pronto para buscar aquilo que lhe fará bem, ser uma nova versão.
 :::
@@ -1993,7 +2001,7 @@ Entendo que palavras como ***amor***, ***beleza*** e ***liberdade*** trazem o se
 #### Correlação das músicas
 
 ::: {style="text-align: justify;"}
-Para encerrarmos a análise das Letras faramos um *mapa de correlação* para analisarmos a correlação existente entre as músicas pertencentes aos álbuns de estúdio de Raul Seixas.
+Para encerrarmos a análise das Letras faremos um *mapa de correlação* para analisarmos a correlação existente entre as músicas pertencentes aos álbuns de estúdio de Raul Seixas.
 
 Criei um novo *dataframe* `raul_cor` que contém apenas as músicas em português dos álbuns de estúdios. Também retirei da base, músicas que contém mais de uma versão, como *versão censurada*, por exemplo.
 
@@ -2105,7 +2113,7 @@ Um doido ou um gênio? E eu digo, porque não ambos? O grande trunfo deste artis
 ####### 
 
 ::: {style="text-align: justify;"}
-Conhecendo melhor as APIs do *Spotify* e as bibliotecas do *R* ou qualquer outa linguagem *(Julia, Python, etc.)* que viabilize a análise de dados, como sugestão de tema para possíveis trabalhos futuros será desenvolver uma máquina de aprendizado (*Machine Learning*) para ajudar fãs do Raul Seixas a criarem *playlists* do artistia com base nas preferências identificadas nas características de suas contas mantidas na plataforma.
+Conhecendo melhor as APIs do *Spotify* e as bibliotecas do *R* ou qualquer outa linguagem *(Julia, Python, etc.)* que viabilize a análise de dados, como sugestão de tema para possíveis trabalhos futuros pode-se desenvolver uma máquina de aprendizado (*Machine Learning*) para ajudar fãs do Raul Seixas a criarem *playlists* do artistia com músicas que se enquadrem nas preferências identificadas nas características de suas contas mantidas na plataforma.
 
 Outra ideia, é se aprofundar mais na análise de sentimentos dos textos e construir um gerador de músicas que nos permita criar nossas próprias músicas inspiradas no Raul Seixas.
 :::
