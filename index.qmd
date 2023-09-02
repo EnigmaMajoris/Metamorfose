@@ -327,7 +327,7 @@ Raul Santos Seixas, morreu em decorrência de pancreatite aguda, em 21 de agosto
 
 # E o meio
 
-A principal motivação desse trabalho é reforçar o conhecimento e colocar em prática os conceitos abordados nas disciplinas do cursos de MBA em Data Science e Analytics da USP/ESALQ.
+A principal motivação desse trabalho é reforçar o conhecimento e colocar em prática os conceitos abordados nas disciplinas do curso de MBA em Data Science e Analytics da USP/ESALQ.
 
 De uma forma despojada, vamos aplicar as etapas da ciência de dados, representada na figura abaixo, sobre a discografia do Raul Seixas.
 
